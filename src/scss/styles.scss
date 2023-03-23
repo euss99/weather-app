@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+$font-family-Poppins: "Poppins", sans-serif;
+$font-family-Roboto: "Roboto", sans-serif;
+$color-primary: #06283d;
+$color-bg-container: #fff;
+$color-bg-button: #dff6ff;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary;
+
+    .container {
+      position: relative;
+      width: 400px;
+      height: 105px;
+      background: $color-bg-container;
+      padding: 28px 32px;
+      overflow: hidden;
+      border-radius: 18px;
+      font-family: $font-family-Roboto;
+      transition: 0.6s ease-out;
+
+      .not-found {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        scale: 0;
+        opacity: 0;
+        display: none;
+
+        img {
+          width: 70%;
+        }
+
+        p {
+          color: $color-primary;
+          font-size: 22px;
+          font-weight: 500;
+          margin-top: 12px;
+        }
+      }
+
+      .search-box {
+        width: 100%;
+        height: min-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+          position: absolute;
+          color: $color-primary;
+          font-size: 24px;
+        }
+
+        input {
+          color: $color-primary;
+          width: 80%;
+          font-size: 24px;
+          font-weight: 500;
+          text-transform: uppercase;
+          padding-left: 32px;
+
+          &::placeholder {
+            color: $color-primary;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: capitalize;
+          }
+        }
+
+        button {
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
+          color: $color-primary;
+          background: $color-bg-button;
+          border-radius: 50%;
+          font-size: 20px;
+          transition: 0.4s ease;
+
+          &:hover {
+            background: $color-primary;
+            color: $color-bg-container
+          }
+        }
+      }
+
+      .weather-box{
+        text-align: center;
+
+        img {
+          width: 60%;
+          margin-top: 30px;
+        }
+
+        .temperature {
+          position: relative;
+          color: $color-primary;
+          font-size: 4rem;
+          font-weight: 800;
+          margin-top: 30px;
+          margin-left: -16px;
+
+          span {
+            position: absolute;
+            margin-left: 4px;
+            font-size: 1.5rem;
+          }
+        }
+
+        .description {
+          color: $color-primary;
+          font-size: 22px;
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+      }
+
+      .weather-details {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        .humidity, .wind {
+          display: flex;
+          align-items: center;
+          width: 50%;
+          height: 100px;
+        }
+
+        .humidity {
+          justify-content: flex-start;
+          padding-left: 20px;
+        }
+
+        .wind {
+          justify-content: flex-end;
+          padding-right: 20px;
+        }
+
+        i {
+          color: $color-primary;
+          font-size: 26px;
+          margin-right: 10px;
+          margin-top: 6px;
+        }
+
+        span {
+          color: $color-primary;
+          font-size: 22px;
+          font-weight: 500;
+        }
+
+        p {
+          color: $color-primary;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+
+      .weather-box, .weather-details {
+        opacity: 0;
+        scale: 0;
+      }
+
+      .fadeIn {
+        animation: 0.5s fadeIn forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+    }
+  }
+}
